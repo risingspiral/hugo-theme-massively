@@ -23,6 +23,15 @@
     </section>
     {{ end }}
     <section class="split contact">
+        {{ with $data.footer.message }}
+            <section class="alt">
+                <p>
+                    {{ range $i, $e := . }}
+                        {{ if $i }} <br/> {{ end }} {{ .line }}
+                    {{ end }}
+                </p>
+            </section>
+        {{ end }}
         {{ with $data.contactinfo.address }}
         <section class="alt">
             <h3>{{ i18n "CONTACT_ADDRESS" . }}</h3>
